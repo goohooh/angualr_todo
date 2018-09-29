@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+	<title></title>
+
+	<style>
+		li.done {
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+<body ng-app="app">
+	<div ng-controller="IndexCtrl">
+		<ul>
+			<li
+				ng-click="item.done = !item.done"
+				ng-class="{done: item.done}"
+			 	ng-repeat="item in todos">
+				{{ item.todo }}
+			</li>
+		</ul>
+
+		<input type="text" ng-model="newTodo" />
+
+		<button ng-click="addTodo()">Add</button>
+	</div>
+
+	<script src="./angular.min.js"></script>
+	<script src="./app.js"></script>
+</body>
+</html>
